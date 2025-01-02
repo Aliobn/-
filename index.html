@@ -17,6 +17,11 @@
             --background-color: #f7f7f7;
             --top-bar-bg: rgba(0, 0, 0, 0.8);
             --border-thickness: 1px;
+            --image-border-color: #000000;
+            --image-hover-filter: brightness(0.7);
+            --lightbox-bg: rgba(0, 0, 0, 0.8);
+            --counter-bg: #000;
+            --counter-text-color: #fff;
         }
 
         body, html {
@@ -24,15 +29,10 @@
             width: 100%;
             font-family: 'The Sans', sans-serif;
             background-color: var(--background-color);
-            position: relative;
             background-image: url('https://a.top4top.io/p_3284u2ecy0.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: transparent;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
         }
 
         .top-bar {
@@ -62,15 +62,32 @@
         }
 
         .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            transition: transform 0.3s ease;
+            width: 40px;
+            height: 40px;
+            margin: 0 12px;
+            transition: transform 0.3s ease, filter 0.3s ease;
             filter: invert(1);
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .social-icons img:hover {
             transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        .icon-container {
+            position: absolute;
+            top: 80px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .icon-container img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
         }
 
         .content {
@@ -79,15 +96,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 150px;
-            padding-bottom: 40px;
-            z-index: 1;
+            padding-top: 140px;
+            padding-bottom: 20px;
         }
 
         .logo-container {
             width: 150px;
             height: 150px;
-            background-color: transparent;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -113,29 +128,52 @@
         .subheading {
             font-size: 18px;
             color: var(--main-color);
+            margin-bottom: 20px;
+        }
+
+        .gallery-info {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-counter {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: var(--counter-bg);
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-family: 'The Sans', sans-serif;
+            color: var(--counter-text-color);
         }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 10px; /* مسافة بين الصور */
-            margin-top: 40px;
+            gap: 10px;
+            margin: 20px;
         }
 
         .gallery img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border: var(--border-thickness) solid #000000;
+            border: var(--border-thickness) solid var(--image-border-color);
             transition: transform 0.3s ease, filter 0.3s ease;
             cursor: pointer;
-            display: block;
-            border-radius: 5%; /* إضافة انحناء الحواف */
+            border-radius: 5%;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
-            filter: brightness(0.7);
+            filter: var(--image-hover-filter);
         }
 
         .lightbox {
@@ -145,7 +183,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: var(--lightbox-bg);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -169,9 +207,38 @@
         .lightbox .close:hover {
             transform: scale(1.1);
         }
+
+        .lightbox .prev,
+        .lightbox .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .lightbox .prev {
+            left: 10px;
+        }
+
+        .lightbox .next {
+            right: 10px;
+        }
+
+        .lightbox .prev:hover,
+        .lightbox .next:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <div class="top-bar">
         <div class="logo">
@@ -179,15 +246,24 @@
         </div>
         <div class="social-icons">
             <a href="https://www.instagram.com/rmx_dzn?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">
-                <img src="https://c.top4top.io/p_32759jen20.png" alt="إنستجرام">
+                <img src="https://e.top4top.io/p_3289gvqk60.png" alt="إنستجرام">
+            </a>
+            <a href="https://www.tiktok.com/@key_design7" target="_blank">
+                <img src="https://f.top4top.io/p_3286veqcz2.png" alt="تيك توك">
             </a>
             <a href="https://wa.me/966548223192" target="_blank">
-                <img src="https://h.top4top.io/p_3271w4xxr2.png" alt="واتساب">
+                <img src="https://e.top4top.io/p_3286lpy0w1.png" alt="واتساب">
             </a>
             <a href="mailto:aliibrahimobn@gmail.com" target="_blank">
-                <img src="https://i.top4top.io/p_3271z5xqr3.png" alt="بريد إلكتروني">
+                <img src="https://d.top4top.io/p_3286cgw8r0.png" alt="بريد إلكتروني">
             </a>
         </div>
+    </div>
+
+    <div class="icon-container" style="top: 80px;">
+        <a href="https://aliobn.github.io/Rmx_dsn/" target="_blank">
+            <img src="https://d.top4top.io/p_3286vs1730.png" alt="أيقونة إضافية">
+        </a>
     </div>
 
     <div class="content">
@@ -198,7 +274,11 @@
         <div class="subheading">هنا سترون بعض التصاميم الخاصة بي</div>
     </div>
 
-    <div class="gallery">
+    <div class="gallery-info">
+        <div class="image-counter" id="imageCounter">عدد الصور: 8</div>
+    </div>
+
+    <div class="gallery" id="gallery">
         <img src="https://a.top4top.io/p_3284mr2vq5.png" alt="تصميم 1" onclick="openLightbox(this)">
         <img src="https://b.top4top.io/p_3284udvme1.png" alt="تصميم 2" onclick="openLightbox(this)">
         <img src="https://c.top4top.io/p_3284s0dli2.png" alt="تصميم 3" onclick="openLightbox(this)">
@@ -207,40 +287,65 @@
         <img src="https://f.top4top.io/p_3284uyijw5.png" alt="تصميم 6" onclick="openLightbox(this)">
         <img src="https://h.top4top.io/p_3284xjnxt7.png" alt="تصميم 7" onclick="openLightbox(this)">
         <img src="https://i.top4top.io/p_3284fcjfz8.png" alt="تصميم 8" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_32845ga3e9.png" alt="تصميم 9" onclick="openLightbox(this)">
-        <img src="https://h.top4top.io/p_3284s9wid0.png" alt="تصميم 10" onclick="openLightbox(this)">
-        <img src="https://i.top4top.io/p_32847c0nv1.png" alt="تصميم 11" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_328476k8a2.png" alt="تصميم 12" onclick="openLightbox(this)">
-        <img src="https://d.top4top.io/p_32848wqtl0.png" alt="تصميم 13" onclick="openLightbox(this)">
-        <img src="https://l.top4top.io/p_3284cj7wh4.png" alt="تصميم 14" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_32845hdoq0.png" alt="تصميم 15" onclick="openLightbox(this)">
-         <img src="https://l.top4top.io/p_3285av5ww0.png" alt="تصميم 16" onclick="openLightbox(this)">
-         <img src="https://a.top4top.io/p_3285rgk4g1.png" alt="تصميم 17" onclick="openLightbox(this)">
-         <img src="https://b.top4top.io/p_3285ho98i2.png"تصميم 18" onclick="openLightbox(this)">
     </div>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close">&times;</span>
-        <img id="lightboxImage" src="" alt="صورة مكبرة">
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img id="lightboxImage" src="" alt="الصورة المكبرة">
+        <button class="prev" onclick="showPrevImage(event)">&#10094;</button>
+        <button class="next" onclick="showNextImage(event)">&#10095;</button>
     </div>
 
     <script>
+        let currentIndex = 0;
+
         function openLightbox(image) {
-            var lightbox = document.getElementById('lightbox');
-            var lightboxImage = document.getElementById('lightboxImage');
-            lightboxImage.src = image.src;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const galleryImages = document.querySelectorAll('#gallery img');
+
+            currentIndex = Array.from(galleryImages).indexOf(image);
+
             lightbox.style.display = 'flex';
+            lightboxImage.src = image.src;
         }
 
         function closeLightbox() {
-            var lightbox = document.getElementById('lightbox');
+            const lightbox = document.getElementById('lightbox');
             lightbox.style.display = 'none';
         }
 
-        // منع النقر بالزر الأيمن
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+        function showNextImage(event) {
+            event.stopPropagation();
+            const galleryImages = document.querySelectorAll('#gallery img');
+            if (currentIndex < galleryImages.length - 1) {
+                currentIndex++;
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = galleryImages[currentIndex].src;
+            }
+        }
+
+        function showPrevImage(event) {
+            event.stopPropagation();
+            const galleryImages = document.querySelectorAll('#gallery img');
+            if (currentIndex > 0) {
+                currentIndex--;
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = galleryImages[currentIndex].src;
+            }
+        }
+
+        function updateImageCounter() {
+            const gallery = document.getElementById('gallery');
+            const imageCounter = document.getElementById('imageCounter');
+            const imageCount = gallery.getElementsByTagName('img').length;
+            imageCounter.textContent = `عدد الصور: ${imageCount}`;
+        }
+
+        window.onload = updateImageCounter;
+
+        const observer = new MutationObserver(updateImageCounter);
+        observer.observe(document.getElementById('gallery'), { childList: true });
     </script>
 
 </body>
