@@ -126,14 +126,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .subheading {
-            font-size: 20px;
-            color: var(--main-color);
-            margin-bottom: 20px;
-            font-weight: 400;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
         .gallery-info {
             width: 100%;
             background-color: var(--top-bar-bg);
@@ -159,7 +151,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 20px;
             padding: 20px;
         }
@@ -269,18 +261,8 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
-        .section .section-description {
-            font-size: 18px;
-            color: var(--section-text-color);
-            margin-bottom: 25px;
-            text-align: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-        }
-
         .section .gallery {
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
     </style>
@@ -309,13 +291,14 @@
             <img src="https://j.top4top.io/p_3284s28s50.jpg" alt="شعار الموقع">
         </div>
         <div class="heading">RMX_DSN</div>
-        <div class="subheading">هنا سترون بعض التصاميم الخاصة بي</div>
     </div>
 
     <!-- قسم الشعارات -->
     <div class="section" id="logos">
         <h2>قسم الشعارات</h2>
-        <div class="section-description">تصاميم شعارات مبتكرة تتناسب مع احتياجاتك.</div>
+        <div class="gallery-info">
+            <span class="image-counter">عدد الصور: 2</span>
+        </div>
         <div class="gallery">
             <img src="https://i.top4top.io/p_3293496v80.jpg" alt="شعار 1" onclick="openLightbox(this)">
             <img src="https://j.top4top.io/p_32931zt0w1.jpg" alt="شعار 2" onclick="openLightbox(this)">
@@ -325,7 +308,9 @@
     <!-- قسم الموك أب -->
     <div class="section" id="mockups">
         <h2>قسم الموك أب</h2>
-        <div class="section-description">استخدم الموك أب لعرض تصاميمك بطريقة احترافية.</div>
+        <div class="gallery-info">
+            <span class="image-counter">عدد الصور: 2</span>
+        </div>
         <div class="gallery">
             <img src="https://k.top4top.io/p_3293hz7uv2.jpg" alt="موك أب 1" onclick="openLightbox(this)">
             <img src="https://j.top4top.io/p_3294n4a640.png" alt="موك أب 2" onclick="openLightbox(this)">
@@ -335,7 +320,9 @@
     <!-- قسم البنرات -->
     <div class="section" id="banners">
         <h2>قسم البنرات</h2>
-        <div class="section-description">بنرات متنوعة تصنع تأثيراً قوياً في أي مكان.</div>
+        <div class="gallery-info">
+            <span class="image-counter">عدد الصور: 2</span>
+        </div>
         <div class="gallery">
             <img src="https://a.top4top.io/p_3284mr2vq5.png" alt="بانر 1" onclick="openLightbox(this)">
             <img src="https://b.top4top.io/p_3284udvme1.png" alt="بانر 2" onclick="openLightbox(this)">
@@ -345,7 +332,9 @@
     <!-- قسم بنرات تواصل اجتماعي -->
     <div class="section" id="social-banners">
         <h2>قسم بنرات تواصل اجتماعي</h2>
-        <div class="section-description">بنرات مخصصة لزيادة تفاعل متابعينك على الشبكات الاجتماعية.</div>
+        <div class="gallery-info">
+            <span class="image-counter">عدد الصور: 2</span>
+        </div>
         <div class="gallery">
             <img src="https://c.top4top.io/p_3284s0dli2.png" alt="بانر تواصل اجتماعي 1" onclick="openLightbox(this)">
             <img src="https://d.top4top.io/p_3284gj9is3.png" alt="بانر تواصل اجتماعي 2" onclick="openLightbox(this)">
@@ -355,7 +344,9 @@
     <!-- قسم تصميم مؤسسات أو شركات -->
     <div class="section" id="corporate-designs">
         <h2>قسم تصميم مؤسسات أو شركات</h2>
-        <div class="section-description">تصاميم مهنية تعكس هوية شركتك وتفردها.</div>
+        <div class="gallery-info">
+            <span class="image-counter">عدد الصور: 2</span>
+        </div>
         <div class="gallery">
             <img src="https://e.top4top.io/p_3284ksg3g4.png" alt="تصميم مؤسسة 1" onclick="openLightbox(this)">
             <img src="https://f.top4top.io/p_3284uyijw5.png" alt="تصميم مؤسسة 2" onclick="openLightbox(this)">
@@ -366,4 +357,36 @@
         <span class="close" onclick="closeLightbox()">×</span>
         <img id="lightboxImage" src="" alt="الصورة المكبرة">
         <button class="prev" onclick="showPrevImage(event)">&#10094;</button>
-        <button class="next" onclick
+        <button class="next" onclick="showNextImage(event)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        let images = [];
+
+        function openLightbox(element) {
+            images = Array.from(document.querySelectorAll('.gallery img'));
+            currentImageIndex = images.indexOf(element);
+            document.getElementById('lightboxImage').src = element.src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function showPrevImage(event) {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById('lightboxImage').src = images[currentImageIndex].src;
+            event.stopPropagation();
+        }
+
+        function showNextImage(event) {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('lightboxImage').src = images[currentImageIndex].src;
+            event.stopPropagation();
+        }
+    </script>
+
+</body>
+</html>
