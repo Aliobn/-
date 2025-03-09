@@ -225,6 +225,14 @@
             background-color: rgba(255, 255, 255, 0.8);
             color: black;
         }
+
+        .lightbox .prev {
+            transform: translateY(-50%) rotate(180deg); /* التدوير لإظهار السهم إلى اليسار */
+        }
+
+        .lightbox .next {
+            transform: translateY(-50%) rotate(0deg); /* السهم يبقى كما هو لليمين */
+        }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -266,7 +274,15 @@
 
     <div class="gallery" id="gallery">
         <img src="https://i.top4top.io/p_3293496v80.jpg" alt="تصميم 1" onclick="openLightbox(this)">
-        <!-- (بقية الصور هنا) -->
+        <img src="https://i.top4top.io/p_32891hx2f1.jpg" alt="تصميم 2" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3289gsu1e0.jpg" alt="تصميم 3" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3289ijddg0.jpg" alt="تصميم 4" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3289x3ka10.jpg" alt="تصميم 5" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_32899negu0.jpg" alt="تصميم 6" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3289gk2zk1.jpg" alt="تصميم 7" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3289wm48r0.jpg" alt="تصميم 8" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3289v5gdw0.jpg" alt="تصميم 9" onclick="openLightbox(this)">
+        <!-- إضافة المزيد من الصور هنا -->
     </div>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
