@@ -19,7 +19,7 @@
             --border-thickness: 1px;
             --image-border-color: #000000;
             --image-hover-filter: brightness(0.7);
-            --lightbox-bg: rgba(0, 0, 0, 0.8);
+            --lightbox-bg: rgba(0, 0, 0, 0.6);
             --counter-bg: #000;
             --counter-text-color: #fff;
         }
@@ -33,125 +33,6 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-        }
-
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--top-bar-bg);
-            color: white;
-            padding: 8px 20px;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .top-bar .logo img {
-            height: 30px;
-            border-radius: 50%;
-        }
-
-        .social-icons {
-            display: flex;
-        }
-
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            margin: 0 12px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            filter: invert(1);
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.2);
-            filter: brightness(1.2);
-        }
-
-        .icon-container {
-            position: absolute;
-            top: 80px;
-            right: 10px;
-            z-index: 1000;
-        }
-
-        .icon-container img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 140px;
-            padding-bottom: 20px;
-        }
-
-        .logo-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .heading {
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--main-color);
-            margin-bottom: 10px;
-        }
-
-        .subheading {
-            font-size: 18px;
-            color: var(--main-color);
-            margin-bottom: 20px;
-        }
-
-        .gallery-info {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 4px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .image-counter {
-            font-size: 18px;
-            font-weight: bold;
-            background-color: var(--counter-bg);
-            padding: 8px 20px;
-            border-radius: 10px;
-            font-family: 'The Sans', sans-serif;
-            color: var(--counter-text-color);
         }
 
         .gallery {
@@ -193,6 +74,7 @@
             max-width: 90%;
             max-height: 90%;
             border-radius: 10px;
+            background: transparent;
         }
 
         .lightbox .close {
@@ -202,10 +84,6 @@
             color: white;
             font-size: 30px;
             cursor: pointer;
-        }
-
-        .lightbox .close:hover {
-            transform: scale(1.1);
         }
 
         .lightbox .prev,
@@ -223,13 +101,8 @@
             user-select: none;
         }
 
-        .lightbox .prev {
-            left: 10px;
-        }
-
-        .lightbox .next {
-            right: 10px;
-        }
+        .lightbox .prev { left: 10px; }
+        .lightbox .next { right: 10px; }
 
         .lightbox .prev:hover,
         .lightbox .next:hover {
@@ -238,81 +111,11 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
-
-    <div class="top-bar">
-        <div class="logo">
-            <img src="https://j.top4top.io/p_3284s28s50.jpg" alt="شعار الموقع">
-        </div>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/rmx_dzn?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">
-                <img src="https://e.top4top.io/p_3289gvqk60.png" alt="إنستجرام">
-            </a>
-            <a href="https://wa.me/966548223192" target="_blank">
-                <img src="https://e.top4top.io/p_3286lpy0w1.png" alt="واتساب">
-            </a>
-            <a href="mailto:aliibrahimobn@gmail.com" target="_blank">
-                <img src="https://d.top4top.io/p_3286cgw8r0.png" alt="بريد إلكتروني">
-            </a>
-        </div>
-    </div>
-
-    <div class="icon-container" style="top: 80px;">
-        <a href="https://aliobn.github.io/Rmx_dsn/" target="_blank">
-            <img src="https://d.top4top.io/p_3286vs1730.png" alt="أيقونة إضافية">
-        </a>
-    </div>
-
-    <div class="content">
-        <div class="logo-container">
-            <img src="https://j.top4top.io/p_3284s28s50.jpg" alt="شعار الموقع">
-        </div>
-        <div class="heading">RMX_DSN</div>
-        <div class="subheading">هنا سترون بعض التصاميم الخاصة بي</div>
-    </div>
-
-    <div class="gallery-info">
-        <div class="image-counter" id="imageCounter">عدد الصور: 32</div>
-    </div>
-
+<body>
     <div class="gallery" id="gallery">
-        <a href="https://i.top4top.io/p_3293496v80.jpg" target="_blank">
-    <img src="https://i.top4top.io/p_3293496v80.jpg" alt="تصميم 0">
-</a>
-
-
         <img src="https://i.top4top.io/p_3293496v80.jpg" alt="تصميم 1" onclick="openLightbox(this)">
         <img src="https://j.top4top.io/p_32931zt0w1.jpg" alt="تصميم 2" onclick="openLightbox(this)">
         <img src="https://k.top4top.io/p_3293hz7uv2.jpg" alt="تصميم 3" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_3294n4a640.png" alt="تصميم 4" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_3284mr2vq5.png" alt="تصميم 5" onclick="openLightbox(this)">
-        <img src="https://b.top4top.io/p_3284udvme1.png" alt="تصميم 6" onclick="openLightbox(this)">
-        <img src="https://c.top4top.io/p_3284s0dli2.png" alt="تصميم 7" onclick="openLightbox(this)">
-        <img src="https://d.top4top.io/p_3284gj9is3.png" alt="تصميم 8" onclick="openLightbox(this)">
-        <img src="https://e.top4top.io/p_3284ksg3g4.png" alt="تصميم 9" onclick="openLightbox(this)">
-        <img src="https://f.top4top.io/p_3284uyijw5.png" alt="تصميم 10" onclick="openLightbox(this)">
-        <img src="https://h.top4top.io/p_3284xjnxt7.png" alt="تصميم 11" onclick="openLightbox(this)">
-        <img src="https://i.top4top.io/p_3284fcjfz8.png" alt="تصميم 12" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_32845ga3e9.png" alt="تصميم 13" onclick="openLightbox(this)">
-        <img src="https://h.top4top.io/p_3284s9wid0.png" alt="تصميم 14" onclick="openLightbox(this)">
-        <img src="https://i.top4top.io/p_32847c0nv1.png" alt="تصميم 15" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_328476k8a2.png" alt=" تصميم 16" onclick="openLightbox(this)">
-        <img src="https://d.top4top.io/p_32848wqtl0.png" alt="تصميم 17" onclick="openLightbox(this)">
-        <img src="https://l.top4top.io/p_3284cj7wh4.png" alt="تصميم 18" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_32845hdoq0.png" alt="تصميم 19" onclick="openLightbox(this)">
-        <img src="https://l.top4top.io/p_3285av5ww0.png" alt="تصميم 20" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_3285rgk4g1.png" alt="تصميم 21" onclick="openLightbox(this)">
-        <img src="https://b.top4top.io/p_3285ho98i2.png" alt="تصميم 22" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_3354swqyb0.jpg" alt="تصميم 23" onclick="openLightbox(this)">
-        <img src="https://b.top4top.io/p_3354nf7nu1.jpg" alt="تصميم 24" onclick="openLightbox(this)">
-        <img src="https://c.top4top.io/p_3354x9h3b2.jpg" alt="تصميم 25" onclick="openLightbox(this)">
-        <img src="https://d.top4top.io/p_335451us93.jpg" alt="تصميم 26" onclick="openLightbox(this)">
-        <img src="https://e.top4top.io/p_3354l9doo4.jpg" alt="تصميم 27" onclick="openLightbox(this)">
-        <img src="https://f.top4top.io/p_33547e13l5.jpg" alt="تصميم 28" onclick="openLightbox(this)">
-        <img src="https://h.top4top.io/p_3354r96307.jpg" alt="تصميم 29" onclick="openLightbox(this)">
-        <img src="https://i.top4top.io/p_3354k5mik8.jpg" alt="تصميم 30" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_3354h3ism9.jpg" alt="تصميم 31" onclick="openLightbox(this)">
-        <img src="https://e.top4top.io/p_335487p4t0.jpg" alt="تصميم 32" onclick="openLightbox(this)">
     </div>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -324,55 +127,31 @@
 
     <script>
         let currentIndex = 0;
+        const galleryImages = document.querySelectorAll('#gallery img');
 
         function openLightbox(image) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightboxImage');
-            const galleryImages = document.querySelectorAll('#gallery img');
-
             currentIndex = Array.from(galleryImages).indexOf(image);
-
             lightbox.style.display = 'flex';
             lightboxImage.src = image.src;
         }
 
         function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
+            document.getElementById('lightbox').style.display = 'none';
         }
 
         function showNextImage(event) {
             event.stopPropagation();
-            const galleryImages = document.querySelectorAll('#gallery img');
-            if (currentIndex < galleryImages.length - 1) {
-                currentIndex++;
-                const lightboxImage = document.getElementById('lightboxImage');
-                lightboxImage.src = galleryImages[currentIndex].src;
-            }
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
         }
 
         function showPrevImage(event) {
             event.stopPropagation();
-            const galleryImages = document.querySelectorAll('#gallery img');
-            if (currentIndex > 0) {
-                currentIndex--;
-                const lightboxImage = document.getElementById('lightboxImage');
-                lightboxImage.src = galleryImages[currentIndex].src;
-            }
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
         }
-
-        function updateImageCounter() {
-            const gallery = document.getElementById('gallery');
-            const imageCounter = document.getElementById('imageCounter');
-            const imageCount = gallery.getElementsByTagName('img').length;
-            imageCounter.textContent = عدد الصور: ${imageCount};
-        }
-
-        window.onload = updateImageCounter;
-
-        const observer = new MutationObserver(updateImageCounter);
-        observer.observe(document.getElementById('gallery'), { childList: true });
     </script>
-
 </body>
 </html>
