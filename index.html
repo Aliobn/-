@@ -214,16 +214,16 @@
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* تأثير الظل */
         }
 
-        /* السهم إلى اليسار */
+        /* السهم إلى اليسار (الآن إلى اليمين) */
         .lightbox .prev {
             left: 15px;
-            transform: translateY(-50%) rotate(180deg); /* التدوير لإظهار السهم إلى اليسار */
+            transform: translateY(-50%) rotate(0deg); /* عكس التدوير ليكون في الاتجاه الصحيح */
         }
 
         /* السهم إلى اليمين */
         .lightbox .next {
             right: 15px;
-            transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(180deg); /* السهم الأيمن الآن سيظهر في الجهة المعاكسة */
         }
 
         /* تأثير عند المرور على الأزرار */
