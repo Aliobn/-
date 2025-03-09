@@ -289,17 +289,23 @@
         <img src="https://e.top4top.io/p_335487p4t0.jpg" alt="تصميم 32" onclick="openLightbox(this)">
     </div>
 
-  .lightbox .prev {<button class="prev" onclick="showPrevImage(event)">&#8592;</button>
-    left: 10px;
-}
-    .lightbox .next {<button class="next" onclick="showNextImage(event)">&#8594;</button>
-    right: 10px;
-}
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img id="lightboxImage" src="" alt="الصورة المكبرة">
+    <button class="prev" onclick="showPrevImage(event)">&#10094;</button>
+    <button class="next" onclick="showNextImage(event)">&#10095;</button>
+</div>
+
 </div>
 
         <span class="close" onclick="closeLightbox()">×</span>
         <img id="lightboxImage" src="" alt="الصورة المكبرة">
         <button class="prev" onclick="showPrevImage(event)">&#10094;</button>
+    .lightbox .prev { <button class="prev" onclick="showPrevImage(event)">&#10094;</button>
+    left: 20px;}
+     .lightbox .prev { <button class="next" onclick="showNextImage(event)">&#10095;</button>
+    left: 20px;}
+    
         <button class="next" onclick="showNextImage(event)">&#10095;</button>
     </div>
 
