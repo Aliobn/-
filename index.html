@@ -196,43 +196,45 @@
             background: transparent;
         }
 
+        /* تحسين شكل الأسهم */
         .lightbox .prev,
         .lightbox .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 25px;
             cursor: pointer;
-            font-size: 20px;
-            border-radius: 5px;
+            font-size: 24px;
+            border-radius: 50%;
             user-select: none;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* تأثير الظل */
         }
 
+        /* السهم إلى اليسار */
         .lightbox .prev {
-            left: 10px;
-        }
-
-        .lightbox .next {
-            right: 10px;
-        }
-
-        .lightbox .prev:hover,
-        .lightbox .next:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-            color: black;
-        }
-
-        .lightbox .prev {
+            left: 15px;
             transform: translateY(-50%) rotate(180deg); /* التدوير لإظهار السهم إلى اليسار */
         }
 
+        /* السهم إلى اليمين */
         .lightbox .next {
-            transform: translateY(-50%) rotate(0deg); /* السهم يبقى كما هو لليمين */
+            right: 15px;
+            transform: translateY(-50%) rotate(0deg);
         }
+
+        /* تأثير عند المرور على الأزرار */
+        .lightbox .prev:hover,
+        .lightbox .next:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* تغير اللون عند المرور */
+            color: #333;
+            transform: scale(1.1); /* تكبير السهم عند المرور */
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6); /* تحسين الظل */
+        }
+
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -273,7 +275,7 @@
     </div>
 
     <div class="gallery" id="gallery">
-<img src="https://i.top4top.io/p_3293496v80.jpg" alt="تصميم 1" onclick="openLightbox(this)">
+        <img src="https://i.top4top.io/p_3293496v80.jpg" alt="تصميم 1" onclick="openLightbox(this)">
         <img src="https://j.top4top.io/p_32931zt0w1.jpg" alt="تصميم 2" onclick="openLightbox(this)">
         <img src="https://k.top4top.io/p_3293hz7uv2.jpg" alt="تصميم 3" onclick="openLightbox(this)">
         <img src="https://j.top4top.io/p_3294n4a640.png" alt="تصميم 4" onclick="openLightbox(this)">
@@ -285,72 +287,41 @@
         <img src="https://f.top4top.io/p_3284uyijw5.png" alt="تصميم 10" onclick="openLightbox(this)">
         <img src="https://h.top4top.io/p_3284xjnxt7.png" alt="تصميم 11" onclick="openLightbox(this)">
         <img src="https://i.top4top.io/p_3284fcjfz8.png" alt="تصميم 12" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_32845ga3e9.png" alt="تصميم 13" onclick="openLightbox(this)">
-        <img src="https://h.top4top.io/p_3284s9wid0.png" alt="تصميم 14" onclick="openLightbox(this)">
-        <img src="https://i.top4top.io/p_32847c0nv1.png" alt="تصميم 15" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_328476k8a2.png" alt=" تصميم 16" onclick="openLightbox(this)">
-        <img src="https://d.top4top.io/p_32848wqtl0.png" alt="تصميم 17" onclick="openLightbox(this)">
-        <img src="https://l.top4top.io/p_3284cj7wh4.png" alt="تصميم 18" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_32845hdoq0.png" alt="تصميم 19" onclick="openLightbox(this)">
-        <img src="https://l.top4top.io/p_3285av5ww0.png" alt="تصميم 20" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_3285rgk4g1.png" alt="تصميم 21" onclick="openLightbox(this)">
-        <img src="https://b.top4top.io/p_3285ho98i2.png" alt="تصميم 22" onclick="openLightbox(this)">
-        <img src="https://a.top4top.io/p_3354swqyb0.jpg" alt="تصميم 23" onclick="openLightbox(this)">
-        <img src="https://b.top4top.io/p_3354nf7nu1.jpg" alt="تصميم 24" onclick="openLightbox(this)">
-        <img src="https://c.top4top.io/p_3354x9h3b2.jpg" alt="تصميم 25" onclick="openLightbox(this)">
-        <img src="https://d.top4top.io/p_335451us93.jpg" alt="تصميم 26" onclick="openLightbox(this)">
-        <img src="https://e.top4top.io/p_3354l9doo4.jpg" alt="تصميم 27" onclick="openLightbox(this)">
-        <img src="https://f.top4top.io/p_33547e13l5.jpg" alt="تصميم 28" onclick="openLightbox(this)">
-        <img src="https://h.top4top.io/p_3354r96307.jpg" alt="تصميم 29" onclick="openLightbox(this)">
-        <img src="https://i.top4top.io/p_3354k5mik8.jpg" alt="تصميم 30" onclick="openLightbox(this)">
-        <img src="https://j.top4top.io/p_3354h3ism9.jpg" alt="تصميم 31" onclick="openLightbox(this)">
-        <img src="https://e.top4top.io/p_335487p4t0.jpg" alt="تصميم 32" onclick="openLightbox(this)">
-        <!-- إضافة المزيد من الصور هنا -->
+        <img src="https://j.top4top.io/p_3284lhgxq9.png" alt="تصميم 13" onclick="openLightbox(this)">
     </div>
 
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="close" onclick="closeLightbox()">×</span>
-        <img id="lightboxImage" src="" alt="الصورة المكبرة">
-        <button class="prev" onclick="showPrevImage(event)">&#8592;</button>
-        <button class="next" onclick="showNextImage(event)">&#8594;</button>
+    <div class="lightbox" id="lightbox">
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <img src="" alt="الصورة المكبرة" id="lightboxImage">
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
     </div>
 
     <script>
-        let currentIndex = 0;
+        let currentImageIndex = 0;
 
-        function openLightbox(image) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            const galleryImages = document.querySelectorAll('#gallery img');
-
-            currentIndex = Array.from(galleryImages).indexOf(image);
-
-            lightbox.style.display = 'flex';
-            lightboxImage.src = image.src;
+        function openLightbox(imgElement) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+            const images = document.querySelectorAll(".gallery img");
+            lightbox.style.display = "flex";
+            lightboxImage.src = imgElement.src;
+            currentImageIndex = Array.from(images).indexOf(imgElement);
         }
 
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+        function changeImage(direction) {
+            const images = document.querySelectorAll(".gallery img");
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightboxImage.src = images[currentImageIndex].src;
         }
 
-        function showNextImage(event) {
-            event.stopPropagation();
-            const galleryImages = document.querySelectorAll('#gallery img');
-            currentIndex = (currentIndex + 1) % galleryImages.length; 
-            document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("lightbox")) {
+                document.getElementById("lightbox").style.display = "none";
+            }
         }
-
-        function showPrevImage(event) {
-            event.stopPropagation();
-            const galleryImages = document.querySelectorAll('#gallery img');
-            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length; 
-            document.getElementById('lightboxImage').src = galleryImages[currentIndex].src;
-        }
-
-        window.onload = updateImageCounter;
-
-        const observer = new MutationObserver(updateImageCounter);
-        observer.observe(document.getElementById('gallery'), { childList: true });
     </script>
 
 </body>
